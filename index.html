@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuno Mimoso</title>
-    <link rel="stylesheet" href="../style.css">
-    <script src="../script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <style>
         /* Hero full-screen carousel */
         .hero {
@@ -28,7 +28,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.4); /* sombra leve */
+            background: rgba(0, 0, 0, 0.4);
             z-index: 1;
         }
 
@@ -45,13 +45,13 @@
             font-size: 3rem;
             font-family: 'Playfair Display', serif;
             color: #CFAE3D;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* sombra no texto */
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
         }
 
         .hero-text p {
             font-size: 1.5rem;
             color: white;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
         }
 
         .carousel-slide {
@@ -78,17 +78,48 @@
             z-index: 3;
         }
 
-        footer {
-            position: relative;
-            background: var(--azul);
-            color: var(--branco);
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-            z-index: 3;
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            box-sizing: border-box;
         }
 
-        /* Dropdown discreto */
+        .menu .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #CFAE3D;
+            text-decoration: none;
+        }
+
+        .menu-direita {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .menu-direita ul {
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .menu-direita ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .menu-direita ul li a:hover,
+        .menu-direita ul li a.active {
+            color: #CFAE3D;
+        }
+
+        /* Dropdown idiomas */
         .idiomas select {
             padding: 4px 6px;
             border: 1px solid #CFAE3D;
@@ -99,125 +130,78 @@
             cursor: pointer;
         }
 
-        .menu-direita ul {
-            display: flex;
-            gap: 15px;
-        }
-
-        .menu-direita ul li a {
+        footer {
+            position: relative;
+            background: #002147;
             color: white;
-            text-decoration: none;
-            font-weight: 500;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            z-index: 3;
         }
 
-        .menu-direita ul li a:hover {
-            color: #CFAE3D;
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
-
-        /* Garante que a navbar nunca estoura para fora */
-.menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 5%;
-    box-sizing: border-box;
-    overflow-x: hidden; /* evita barra horizontal */
-}
-
-/* Corrige a parte direita (links + dropdown) */
-.menu-direita {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-/* O UL não deve crescer demais */
-.menu-direita ul {
-    display: flex;
-    gap: 15px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-/* Garante que nada ultrapassa a viewport */
-html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* força corte do scroll lateral */
-}
-
-/* Ajusta slides e overlay para nunca ultrapassarem */
-.carousel-slide,
-.hero::after {
-    width: 100%;
-    max-width: 100vw; /* nunca maior que a largura da viewport */
-    left: 0;
-}
-
-
-
-        
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <header>
-        <nav class="menu">
-            <a href="index.html" class="logo">Nuno Mimoso</a>
-            <div class="menu-direita">
-                <ul>
-                    <li><a href="apresentacao.html">Apresentação</a></li>
-                    <li><a href="servicos.html">Serviços</a></li>
-                    <li><a href="agenda.html">Agenda</a></li>
-                    <li><a href="partilhas.html">Partilhas</a></li>
-                    <li><a href="contactos.html">Contactos</a></li>
-                </ul>
-                <div class="idiomas">
-                    <select id="lang-switcher" onchange="mudarIdioma(this.value)">
-                        <option value="../pt/index.html" selected>PT</option>
-                        <option value="../en/index.html">EN</option>
-                        <option value="../de/index.html">DE</option>
-                    </select>
-                </div>
+
+<!-- Navbar -->
+<header>
+    <nav class="menu">
+        <a href="index.html" class="logo">Nuno Mimoso</a>
+        <div class="menu-direita">
+            <ul>
+                <li><a href="apresentacao.html">Apresentação</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="agenda.html">Agenda</a></li>
+                <li><a href="partilhas.html">Partilhas</a></li>
+                <li><a href="contactos.html">Contactos</a></li>
+            </ul>
+            <div class="idiomas">
+                <select id="lang-switcher" onchange="mudarIdioma(this.value)">
+                    <option value="index.html" selected>PT</option>
+                    <option value="index.html">EN</option>
+                    <option value="index.html">DE</option>
+                </select>
             </div>
-        </nav>
-    </header>
-
-    <!-- Hero / Carousel -->
-    <section class="hero">
-        <div class="carousel-slide active" style="background-image: url('img/slide1.jpg');"></div>
-        <div class="carousel-slide" style="background-image: url('img/slide2.jpg');"></div>
-        <div class="carousel-slide" style="background-image: url('img/slide3.jpg');"></div>
-
-        <!-- Texto fixo sobre o carrossel -->
-        <div class="hero-text">
-            <h1>Nuno Mimoso</h1>
-            <p>Director artístico · Organista · Musicólogo</p>
         </div>
-    </section>
+    </nav>
+</header>
 
-    <!-- Footer -->
-    <footer>
-        <div class="links">
-            <a href="#">Política de Privacidade</a> | 
-            <a href="#">Termos e Condições</a>
-        </div>
-        <p>&copy; 2025 Nuno Mimoso</p>
-    </footer>
+<!-- Hero / Carousel -->
+<section class="hero">
+    <div class="carousel-slide active" style="background-image: url('img/slide1.jpg');"></div>
+    <div class="carousel-slide" style="background-image: url('img/slide2.jpg');"></div>
+    <div class="carousel-slide" style="background-image: url('img/slide3.jpg');"></div>
 
-    <script>
-        // Carrossel automático
-        const slides = document.querySelectorAll('.carousel-slide');
-        let current = 0;
+    <div class="hero-text">
+        <h1>Nuno Mimoso</h1>
+        <p>Director artístico · Organista · Musicólogo</p>
+    </div>
+</section>
 
-        function nextSlide() {
-            slides[current].classList.remove('active');
-            current = (current + 1) % slides.length;
-            slides[current].classList.add('active');
-        }
+<!-- Footer -->
+<footer>
+    <div class="links">
+        <a href="#">Política de Privacidade</a> | 
+        <a href="#">Termos e Condições</a>
+    </div>
+    <p>&copy; 2025 Nuno Mimoso</p>
+</footer>
 
-        setInterval(nextSlide, 5000); // muda a cada 5s
-    </script>
+<script>
+const slides = document.querySelectorAll('.carousel-slide');
+let current = 0;
+function nextSlide() {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+}
+setInterval(nextSlide, 5000);
+</script>
 </body>
 </html>
