@@ -1,0 +1,190 @@
+/* ===== VARIÁVEIS ===== */
+:root {
+    --azul: #002147;
+    --dourado: #cfae3d;
+    --branco: #ffffff;
+    --cinza: #f4f4f4;
+}
+
+/* ===== RESET E BODY ===== */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Lato', sans-serif;
+    background-color: var(--branco);
+    color: var(--azul);
+}
+
+/* ===== HEADER / NAVBAR ===== */
+header {
+    background: var(--azul);
+    padding: 15px 30px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.menu .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--dourado);
+    text-decoration: none;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.menu a:hover,
+.menu a.active {
+    color: var(--dourado);
+}
+
+/* Dropdown idiomas */
+.idiomas select {
+    padding: 4px 6px;
+    border: 1px solid var(--dourado);
+    border-radius: 3px;
+    background: var(--azul);
+    color: var(--dourado);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* ===== HERO (apenas index) ===== */
+.hero {
+    background: url('img/orgao.jpg') no-repeat center center/cover;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--branco);
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin: 0;
+    color: var(--dourado);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    position: relative;
+    background: var(--azul);
+    color: var(--branco);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    z-index: 3;
+}
+
+footer a {
+    color: var(--dourado);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.menu-direita {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu-direita ul {
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex-shrink: 0; /* impede que o UL cresça e empurre o dropdown */
+}
+
+.idiomas {
+    flex-shrink: 0; /* garante que o dropdown não encolhe */
+}
+
+.form-container {
+    background: #ffffff;
+    padding: 40px;            /* mais espaçamento interno */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 800px;         /* maior que antes (600px) */
+    width: 100%;              /* ocupa toda a largura disponível até o max */
+    margin: 0 auto;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 14px;
+    font-size: 1.05rem;
+}
+
+.form-group button {
+    padding: 14px 25px;
+    font-size: 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.social-links a img {
+    width: 60px;        /* tamanho dos ícones */
+    height: 60px;
+    transition: transform 0.2s;
+}
+
+.social-links a img:hover {
+    transform: scale(1.1);   /* leve aumento ao passar o mouse */
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+}
+
+.social-links a {
+    color: #CFAE3D; /* dourado */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.social-links a:hover {
+    color: #ffffff; /* muda no hover */
+    transform: scale(1.1);
+}
+
+
+
+
+
