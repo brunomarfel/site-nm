@@ -7,109 +7,181 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <style>
-        main {
-            min-height: 100vh;
-            padding: 120px 10% 60px; /* espaço por causa da navbar */
-            background: #f9f9f9;
+        body {
             font-family: 'Playfair Display', serif;
-            display: flex;
-            gap: 40px;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+            color: #002147;
         }
 
-        /* Coluna da foto */
-        .col-esquerda {
-            flex: 0 0 33%;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
+        /* Navbar */
+        header {
+            background: #002147;
+            padding: 15px 5%;
         }
 
-        .col-esquerda img {
-            max-width: 100%;
-            height: auto;
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .menu .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #CFAE3D;
+            text-decoration: none;
+        }
+
+        .menu-direita ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-direita ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .menu-direita ul li a:hover,
+        .menu-direita ul li a.active {
+            color: #CFAE3D;
+        }
+
+        .idiomas select {
+            padding: 4px 6px;
+            border: 1px solid #CFAE3D;
+            border-radius: 3px;
+            background: #002147;
+            color: #CFAE3D;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        /* Hero banner */
+        .hero-banner {
+            width: 100%;
+            height: 500px;
+            background-image: url('img/slide3.jpg');
+            background-size: cover;
+            background-position: center;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
         }
 
-        /* Coluna do texto */
-        .col-direita {
-            flex: 0 0 66%;
+        /* Texto de apresentação */
+        .texto-apresentacao {
+            max-width: 900px;
+            margin: 0 auto 80px auto;
+            text-align: center;
         }
 
-        .col-direita h1 {
+        .texto-apresentacao h1 {
             font-size: 2.5rem;
-            color: #002147; /* azul */
             margin-bottom: 10px;
         }
 
-        .col-direita h2 {
+        .texto-apresentacao h2 {
             font-size: 1.5rem;
-            color: #CFAE3D; /* ouro */
+            color: #CFAE3D;
             margin-bottom: 20px;
         }
 
-        .col-direita p {
+        .texto-apresentacao p {
             line-height: 1.6;
             margin-bottom: 15px;
-            color: #333;
+        }
+
+        footer {
+            background: #002147;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #CFAE3D;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media(max-width: 768px){
+            .hero-banner {
+                height: 250px;
+            }
+
+            .texto-apresentacao h1 {
+                font-size: 2rem;
+            }
+
+            .texto-apresentacao h2 {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <header>
-        <nav class="menu">
-            <a href="index.html" class="logo">Nuno Mimoso</a>
-            <div class="menu-direita">
-                <ul>
-                    <li><a href="apresentacao.html" class="active">Apresentação</a></li>
-                    <li><a href="servicos.html">Serviços</a></li>
-                    <li><a href="agenda.html">Agenda</a></li>
-                    <li><a href="partilhas.html">Partilhas</a></li>
-                    <li><a href="contactos.html">Contactos</a></li>
-                </ul>
-                <div class="idiomas">
-                    <select id="lang-switcher" onchange="mudarIdioma(this.value)">
-                        <option value="apresentacao.html" selected>PT</option>
-                        <option value="apresentacao.html">EN</option>
-                        <option value="apresentacao.html">DE</option>
-                    </select>
-                </div>
+
+<!-- Navbar -->
+<header>
+    <nav class="menu">
+        <a href="index.html" class="logo">Nuno Mimoso</a>
+        <div class="menu-direita">
+            <ul>
+                <li><a href="apresentacao.html" class="active">APRESENTAÇÃO</a></li>
+                <li><a href="servicos.html">SERVIÇOS</a></li>
+                <li><a href="agenda.html">AGENDA</a></li>
+                <li><a href="partilhas.html">PARTILHAS</a></li>
+                <li><a href="contactos.html">CONTACTOS</a></li>
+            </ul>
+            <div class="idiomas">
+                <select id="lang-switcher" onchange="mudarIdioma(this.value)">
+                    <option value="apresentacao.html" selected>PT</option>
+                    <option value="apresentacao.html">EN</option>
+                    <option value="apresentacao.html">DE</option>
+                </select>
             </div>
-        </nav>
-    </header>
-
-    <!-- Conteúdo principal -->
-    <main>
-        <!-- Coluna da foto -->
-        <div class="col-esquerda">
-            <img src="img/foto.jpg" alt="Foto de apresentação">
         </div>
+    </nav>
+</header>
 
-        <!-- Coluna do texto -->
-        <div class="col-direita">
-            <h1>Título</h1>
-            <h2>Subtítulo</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Sed posuere, massa ac facilisis interdum, eros libero euismod metus, sed sodales risus urna nec justo.
-            </p>
-            <p>
-                Nulla facilisi. Integer ultricies, orci non pretium varius, nisi lacus tincidunt nisl, ac porttitor augue nunc a neque.
-            </p>
-            <p>
-                Vivamus tempor, sapien ut viverra imperdiet, lectus lorem volutpat eros, vel luctus metus velit eu lorem.
-            </p>
-        </div>
-    </main>
+<!-- Hero Banner -->
+<div class="hero-banner"></div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="links">
-            <a href="#">Política de Privacidade</a> | 
-            <a href="#">Termos e Condições</a>
-        </div>
-        <p>&copy; 2025 Nuno Mimoso</p>
-    </footer>
+<!-- Texto de apresentação -->
+<div class="texto-apresentacao">
+    <h1>Título</h1>
+    <h2>Subtítulo</h2>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Sed posuere, massa ac facilisis interdum, eros libero euismod metus, sed sodales risus urna nec justo.
+    </p>
+    <p>
+        Nulla facilisi. Integer ultricies, orci non pretium varius, nisi lacus tincidunt nisl, ac porttitor augue nunc a neque.
+    </p>
+    <p>
+        Vivamus tempor, sapien ut viverra imperdiet, lectus lorem volutpat eros, vel luctus metus velit eu lorem.
+    </p>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="links">
+        <a href="#">Política de Privacidade</a> | 
+        <a href="#">Termos e Condições</a>
+    </div>
+    <p>&copy; 2025 Nuno Mimoso</p>
+</footer>
+
 </body>
 </html>
