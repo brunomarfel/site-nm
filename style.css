@@ -33,9 +33,9 @@ header {
 }
 
 .menu .logo {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', serif !important; /* força uso da fonte */
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 700 !important; /* força bold consistente */
     color: var(--dourado);
     text-decoration: none;
 }
@@ -56,9 +56,10 @@ header {
 }
 
 .menu-direita ul li a {
+    font-family: 'Playfair Display', serif !important; /* garante mesma fonte */
+    font-weight: 500 !important; /* força espessura consistente */
     color: var(--branco);
     text-decoration: none;
-    font-weight: 500;
 }
 
 .menu-direita ul li a:hover,
@@ -75,7 +76,9 @@ header {
     color: var(--dourado);
     font-size: 0.9rem;
     cursor: pointer;
+    font-family: 'Playfair Display', serif !important; /* garante consistência */
 }
+
 
 .idiomas {
     flex-shrink: 0;
@@ -298,5 +301,7 @@ h1 .initial {
     vertical-align: top;
     line-height: 1;
 }
+
+
 
 }

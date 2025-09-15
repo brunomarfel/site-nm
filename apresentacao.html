@@ -1,186 +1,116 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação | Nuno Mimoso</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <style>
-        body {
-            font-family: 'Playfair Display', serif;
-            margin: 0;
-            padding: 0;
-            background: #f9f9f9;
-            color: #002147;
-        }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Apresentação | Nuno Mimoso</title>
 
-        /* Navbar */
-        header {
-            background: #002147;
-            padding: 15px 5%;
-        }
+<!-- link para o CSS global (certifica-te que style.css está na MESMA PASTA que este HTML) -->
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 
-        .menu {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+<!-- apenas estilos específicos desta página (NÃO tocar na navbar aqui) -->
+<style>
+  /* estilos específicos: hero-banner e texto (não mexer na navbar) */
+  .hero-banner {
+    width: 100%;
+    height: 550px;
+    background-image: url('img/slide3.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
 
-        .menu .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #CFAE3D;
-            text-decoration: none;
-        }
+  .texto-apresentacao {
+    max-width: 900px;
+    margin: 0 auto 80px auto;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: #002147;
+  }
 
-        .menu-direita ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            margin: 0;
-            padding: 0;
-        }
+  .texto-apresentacao h1 { font-size: 2.5rem; margin-bottom: 10px; }
+  .texto-apresentacao h2 { font-size: 1.5rem; color: #CFAE3D; margin-bottom: 20px; }
+  .texto-apresentacao p { line-height: 1.6; margin-bottom: 15px; }
 
-        .menu-direita ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .menu-direita ul li a:hover,
-        .menu-direita ul li a.active {
-            color: #CFAE3D;
-        }
-
-        .idiomas select {
-            padding: 4px 6px;
-            border: 1px solid #CFAE3D;
-            border-radius: 3px;
-            background: #002147;
-            color: #CFAE3D;
-            font-size: 0.9rem;
-            cursor: pointer;
-        }
-
-        /* Hero banner */
-        .hero-banner {
-            width: 100%;
-            height: 500px;
-            background-image: url('img/slide3.jpg');
-            background-size: cover;
-            background-position: center;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            margin-bottom: 40px;
-        }
-
-        /* Texto de apresentação */
-        .texto-apresentacao {
-            max-width: 900px;
-            margin: 0 auto 80px auto;
-            text-align: center;
-        }
-
-        .texto-apresentacao h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .texto-apresentacao h2 {
-            font-size: 1.5rem;
-            color: #CFAE3D;
-            margin-bottom: 20px;
-        }
-
-        .texto-apresentacao p {
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        footer {
-            background: #002147;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        footer a {
-            color: #CFAE3D;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        @media(max-width: 768px){
-            .hero-banner {
-                height: 250px;
-            }
-
-            .texto-apresentacao h1 {
-                font-size: 2rem;
-            }
-
-            .texto-apresentacao h2 {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
+  @media(max-width:768px){
+    .hero-banner { height: 300px; }
+    .texto-apresentacao h1 { font-size: 2rem; }
+    .texto-apresentacao h2 { font-size: 1.2rem; }
+  }
+</style>
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- NAVBAR (idêntica ao index) -->
 <header>
-    <nav class="menu">
-        <a href="index.html" class="logo">Nuno Mimoso</a>
-        <div class="menu-direita">
-            <ul>
-                <li><a href="apresentacao.html" class="active">APRESENTAÇÃO</a></li>
-                <li><a href="servicos.html">SERVIÇOS</a></li>
-                <li><a href="agenda.html">AGENDA</a></li>
-                <li><a href="partilhas.html">PARTILHAS</a></li>
-                <li><a href="contactos.html">CONTACTOS</a></li>
-            </ul>
-            <div class="idiomas">
-                <select id="lang-switcher" onchange="mudarIdioma(this.value)">
-                    <option value="apresentacao.html" selected>PT</option>
-                    <option value="apresentacao.html">EN</option>
-                    <option value="apresentacao.html">DE</option>
-                </select>
-            </div>
-        </div>
-    </nav>
+  <nav class="menu">
+    <a href="index.html" class="logo">LOGO</a>
+    <div class="menu-direita">
+      <ul>
+        <li><a href="apresentacao.html" class="active">BIOGRAFIA</a></li>
+        <li><a href="servicos.html">SERVIÇOS</a></li>
+        <li><a href="agenda.html">AGENDA</a></li>
+        <li><a href="partilhas.html">PARTILHAS</a></li>
+        <li><a href="contactos.html">CONTACTOS</a></li>
+      </ul>
+      <div class="idiomas">
+        <select id="lang-switcher" onchange="mudarIdioma(this.value)">
+          <option value="apresentacao.html" selected>PT</option>
+          <option value="apresentacao.html">EN</option>
+          <option value="apresentacao.html">DE</option>
+        </select>
+      </div>
+    </div>
+  </nav>
 </header>
 
-<!-- Hero Banner -->
-<div class="hero-banner"></div>
 
-<!-- Texto de apresentação -->
-<div class="texto-apresentacao">
-    <h1>Título</h1>
-    <h2>Subtítulo</h2>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Sed posuere, massa ac facilisis interdum, eros libero euismod metus, sed sodales risus urna nec justo.
-    </p>
-    <p>
-        Nulla facilisi. Integer ultricies, orci non pretium varius, nisi lacus tincidunt nisl, ac porttitor augue nunc a neque.
-    </p>
-    <p>
-        Vivamus tempor, sapien ut viverra imperdiet, lectus lorem volutpat eros, vel luctus metus velit eu lorem.
-    </p>
+<!-- HERO BANNER -->
+<div class="hero-banner" role="img" aria-label="Foto de apresentação"></div>
+
+<!-- Conteúdo -->
+<main>
+    
+    <div class="texto-apresentacao">
+
+    <h1 style="text-align: left;">BIOGRAFIA</h1>
+
+    <p style="text-align: justify;">músico sacro, organista, barítono lírico, musicólogo, consultor, formador, director artístico. </p>
+
+    <h2 style="text-align: left;">Organista.</h2>
+    <p style="text-align: justify;">Diplomado em Órgão - Pedagogia Instrumental pela Escola Superior de Música Sacra e Pedagogia Musical de Ratisbona (Baviera, Alemanha) com a tese <em>A Batalha na Música Ibérica para Órgão no século XVII</em>. Foi bolseiro da Diocese de Ratisbona entre 2011-2016. Discípulo de Franz Josef Stoiber, complementou a formação prática como organista auxiliar na Catedral de S. Pedro de Ratisbona e como assistente na Escola de Música Catedralícia <em>Domspatzen</em>. Cursou interpretação organística especializada em diferentes estilos e tipologias organísticas, junto dos mestres Ludger Lohmann, Jörg-Andreas Bötticher, Bernhard Buttmann, Edgar Krapp. Organista de liturgia e concerto com apresentações na Alemanha, Áustria, Itália, Galiza e Portugal.</p>
+
+    <h2 style="text-align: left;">Patrimonialista.</h2>
+    <p style="text-align: justify;">Mestre em Património Cultural e Museologia pela Faculdade de Letras da Universidade de Coimbra com a tese <em>Património Organístico Português: Problemas e Soluções de Conservação e Reabilitação</em>. Premiado no Quadro de Mérito da Universidade de Coimbra (19 valores). Membro da <em>Gesellschaft der Orgelfreunde</em>, associação alemã para promoção da cultura organística internacional. Foi colaborador da Meloteca: Sítio da Música e das Artes, para o Inventário dos Órgãos de Portugal, objecto de estudo doutoral. Colabora regularmente com instituições culturais nas <em>Jornadas Europeias do Património</em>.</p>
+
+    <h2 style="text-align: left;">Consultor.</h2>
+    <p style="text-align: justify;">Consultor da Direcção de Serviços dos Bens Culturais da Direcção Regional de Cultura do Norte (DRCN) entre 2018-2023. Autor de Projectos de Restauro, Estudos Prévios, Cadernos de Encargos, Fiscalização Técnica, Dinamização Cultural, dos seguintes órgãos históricos: Mosteiro de Santa Clara do Porto (órgão da nave e órgão do coro-alto), Igreja de São João Novo (Porto), Capela da Confraria de Nossa Senhora da Conceição (Guimarães), Colegiada de Nossa Senhora da Oliveira (Guimarães), Matriz de Santa Marinha do Zêzere (Baião), Mosteiro de Ancede (Baião), Mosteiro de São Bento da Vitória (Porto), Matriz de Penafiel.</p>
+
+    <h2 style="text-align: left;">Musicólogo.</h2>
+    <p style="text-align: justify;">Coordenador Científico e Co-Autor do livro <em>Património Musical de Santa Clara do Porto</em> (2023), que abarcou estudo do acervo musicográfico do cenóbio clariano portuense, catalogação musicológica, disponibilização pública na <em>Biblioteca Nacional Digital</em>, transcrição musicográfica, edição crítica de obras dos mestres Francisco de São Boaventura, António da Silva Leite, Marcos Portugal. Director Científico do catálogo e estudo do fundo musical da Colegiada de Guimarães custodiado pelo <em>Arquivo Municipal Alfredo Pimenta</em> (Câmara Municipal de Guimarães) e pela <em>Sociedade Martins Sarmento</em>, no prelo.</p>
+
+    <h2 style="text-align: left;">Cantor e Formador.</h2>
+    <p style="text-align: justify;">Membro do Círculo Portuense de Ópera com várias apresentações no Coliseu do Porto entre 2004-2007. Discípulo do barítono lírico Nuno de Vilallonga (Madrid/Lisboa). Enquanto director de coro, organista, cantor e formador, colaborou com diversas instituições eclesiásticas, entre outros: Colegiada de Cedofeita, Paróquia da Boavista, Carmelitas de Gondarém (Porto), Mosteiro de Santa Escolástica (Roriz), Basílica St. Emmeram (Regensburg), Hl. Dreifaltigkeit (Steinweg), St. Cäcilia (Regensburg), Colegiada da Oliveira (Guimarães), Comunidade Evangélica Alemã (Porto), St. Elisabeth Kareth (Lappersdorf), Heiliger Geist (Regensburg). Docente de técnica vocal e canto em Regensburg.</p>
+
+    <h2 style="text-align: left;">Director Artístico.</h2>
+    <p style="text-align: justify;">Promotor dos Órgãos Históricos de Portugal em ciclos de divulgação, formatos de <em>concerto didáctico</em> e <em>visita musical</em>. Autor das <em>Jornadas do Grande Órgão Histórico da Oliveira</em> (Guimarães) para dinamização cultural daquele Monumento Nacional, a partir do maior órgão histórico do Norte de Portugal (Carvalho 1831-1841). Autor e Director Artístico do Projecto de Inauguração e Dinamização Cultural do Órgão Histórico de Santa Marinha do Zêzere (2023-2024), apoiado pela Direcção-Geral das Artes e pelo Município de Baião. Inaugurou os órgãos históricos restaurados de Santa Clara do Porto e de Santa Marinha do Zêzere.</p>
+
 </div>
 
-<!-- Footer -->
+
+
+</main>
+
+<!-- Footer (idêntico ao index) -->
 <footer>
-    <div class="links">
-        <a href="#">Política de Privacidade</a> | 
-        <a href="#">Termos e Condições</a>
-    </div>
-    <p>&copy; 2025 Nuno Mimoso</p>
+  <div class="links">
+    <a href="#">Política de Privacidade</a> |
+    <a href="#">Termos e Condições</a>
+  </div>
+  <p>&copy; 2025 Nuno Mimoso</p>
 </footer>
 
 </body>
