@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Domínios | Nuno Mimoso</title>
+
+<!-- link para o CSS global (certifica-te que style.css está na MESMA PASTA que este HTML) -->
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+
+<style>
+  /* estilos específicos: hero-banner e texto (não mexer na navbar) */
+  .hero-banner {
+    width: 100%;
+    height: 550px;
+    background-image: url('img/slide1.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+
+  .texto-apresentacao {
+    max-width: 900px;
+    margin: 0 auto 80px auto;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: #002147;
+  }
+
+  .texto-apresentacao h1 { font-size: 2.5rem; margin-bottom: 10px; }
+  .texto-apresentacao h2 { font-size: 1.5rem; color: #CFAE3D; margin-bottom: 20px; }
+  .texto-apresentacao p { line-height: 1.6; margin-bottom: 15px; }
+
+  /* ESTILOS DO ACCORDION MODIFICADO */
+  .accordion-item {
+    margin-bottom: 0;
+    border-bottom: 1px solid #e0e0e0;
+    background: white;
+  }
+
+  .accordion-item:first-child {
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .accordion-header {
+    width: 100%;
+    padding: 20px 0;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    color: #002147;
+    transition: color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: inherit;
+    font-weight: normal;
+  }
+
+  .accordion-header:hover {
+    color: #CFAE3D;
+  }
+
+  /* Ícone + apenas para accordeons com conteúdo */
+  .accordion-header.has-content::after {
+    content: '+';
+    font-size: 18px;
+    font-weight: normal;
+    transition: transform 0.3s ease;
+    color: #002147;
+  }
+
+  .accordion-header.has-content.active::after {
+    content: '−';
+  }
+
+  .accordion-content {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+    background-color: white;
+  }
+
+  .accordion-content.active {
+    padding: 0 0 20px 0;
+    max-height: 2000px; /* AUMENTADO para caber até 10 parágrafos */
+  }
+
+  .accordion-content p {
+    margin-bottom: 15px; /* MAIS ESPAÇO entre parágrafos */
+    text-align: justify;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .accordion-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media(max-width:768px){
+    .hero-banner { height: 300px; }
+    .texto-apresentacao h1 { font-size: 2rem; }
+    .texto-apresentacao h2 { font-size: 1.2rem; }
+    .accordion-header { padding: 15px 0; font-size: 14px; }
+    .accordion-content.active { padding: 0 0 15px 0; max-height: 3000px; } /* AUMENTADO para mobile */
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR (idêntica ao index) -->
+<header>
+  <nav class="menu">
+    <a href="index.html" class="logo"></a>
+    <div class="menu-direita">
+          <ul>
+                <li><a href="biografia.html">BIOGRAFIA</a></li>
+                <li><a href="dominios.html">DOMÍNIOS</a></li>
+                <!-- <li><a href="gesangstimmbildung.html" class="active">GESANG & STIMMBILDUNG </a></li> -->
+                <li><a href="actividades.html" class="active">ACTIVIDADES</a></li>
+                <li><a href="puplicacoes.html">PUBLICAÇÕES</a></li>
+                <li><a href="contactos.html">CONTACTOS</a></li>
+            </ul>
+      <div class="idiomas">
+        <select id="lang-switcher" onchange="mudarIdioma(this.value)">
+          <option value="apresentacao.html" selected>PT</option>
+          <option value="apresentacao.html">EN</option>
+          <option value="apresentacao.html">DE</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+<!-- HERO BANNER -->
+<div class="hero-banner" role="img" aria-label="Foto de apresentação"></div>
+
+<!-- Conteúdo -->
+<main>
+    
+    <div class="texto-apresentacao">
+
+    <h1 style="text-align: left;">DOMÍNIOS</h1>
+
+    <h2 style="text-align: left;">Pedagogia Musical. Música Sacra.</h2>
+
+    <div class="accordion-item">
+        <button class="accordion-header">Aulas particulares. Formações. Cursos.</button>
+        <div class="accordion-content">
+            <p></p>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-header">Visitas Musicais. Visitas Guiadas.</button>
+        <div class="accordion-content">
+            <p></p>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-header has-content">Cursos Intensivos de Técnica Vocal. </button>
+        <div class="accordion-content">
+            <h4 style="text-align: left;">GESANG & STIMMBILDUNG – INTENSIVKURSE IN REGENSBURG –</h4>
+        
+        <p class="primeiro-paragrafo">Ihre Stimme entdecken – entfalten – genießen</p>
+
+        <p class="paragrafos-justificados"><strong>Für wen? ▪</strong> Wenn Sie Ihre Stimme entdecken und entwickeln möchten ▪ Wenn Sie als Laiensänger*in im Chor singen und Ihre Stimme verbessern möchten ▪ Wenn Sie bereits professioneller Sänger sind und sich weiterentwickeln möchten ▪ Wenn Sie durchs Singen Ihrer Seele nähren möchten.</p>
+
+        <p class="paragrafos-justificados"><strong>Gesangscoach ▪</strong> Nuno Mimoso aus Porto/Portugal – Kirchenmusiker, Musikwissenschaftler, Sänger und Pädagoge mit 20 Jahren Erfahrung in der Vokalpädagogik, geprägt durch die spanisch-italienische Gesangsschule, tätig in Klassik, Oper (u. a. Coliseu do Porto), Oratorien und Kirchenmusik – bietet qualifizierten Gesangsunterricht und Stimmbildung an.</p>
+
+        <p class="paragrafos-justificados"><strong>Intensivkurs I.</strong>  November 2025 | <strong>Intensivkurs II.</strong> Januar 2026 ▪ Ort: Pfarrzentrum Heiliger Geist, Isarstraße 54, 93057 Regensburg ▪ Schwerpunkte: Atemtechnik, Stimmbildung, Vocalizing, Repertoire ▪ Stilrichtungen: Klassik, Kammermusik, Oper, Oratorien, Kirchenmusik, Gospel ▪ Schnupperstunde jederzeit möglich.</p>
+
+        <p class="paragrafos-justificados"><strong>Ziele ▪</strong> Entdeckung eigener stimmlicher Fähigkeiten ▪ Entwicklung des bewussten Singens anhand der Technik ▪ Schulung des kritischen Gehörs ▪ Selbstbewusstsein durchs Solo- und Vor-Singen ▪ Vorbereitung auf das Singen in qualitätsvollen Chören ▪ Förderung von Gesundheit und Wohlbefinden durch Gesang...</p>
+
+        <p class="paragrafos-justificados"><strong>Kontakt ▪ </strong>Kontaktieren Sie mich für weitere informações oder zur Vereinbarung einer Probestunde.</p>
+        </div>
+    </div>
+
+    <h2 style="text-align: left;">Musicologia. Organologia.</h2>
+
+    <div class="accordion-item">
+        <button class="accordion-header">IPOP: Inventário do Património Organístico Português. </button>
+        <div class="accordion-content">
+            <p></p>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-header">Projectos de Restauro de Órgãos em Portugal.</button>
+        <div class="accordion-content">
+            <p></p>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-header">Património Musical. Edição Crítica Musicográfica.</button>
+        <div class="accordion-content">
+            <p></p>
+        </div>
+    </div>
+    
+    <h2 style="text-align: left;">Direcção Artística.</h2>
+
+    <div class="accordion-item">
+        <button class="accordion-header">Conceber, realizar, apresentar Concertos</button>
+        <div class="accordion-content">
+            <p></p>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-header">Concertos Pedagógicos. Concertos Comentados.</button>
+        <div class="accordion-content">
+            <p></p>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-header">Programas de Inauguração e Divulgação.</button>
+        <div class="accordion-content">
+            <p></p>
+        </div>
+    </div>
+
+</div>
+
+</main>
+
+<!-- Footer  -->
+<footer>
+  <div class="links">
+    <a href="#">Política de Privacidade</a> |
+    <a href="#">Termos e Condições</a>
+  </div>
+  <p>&copy; 2025 Nuno Mimoso</p>
+</footer>
+
+<script>
+  // Script específico para o accordion
+  document.addEventListener('DOMContentLoaded', function() {
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', function() {
+        // Fecha todos os outros itens do mesmo grupo (opcional)
+        accordionHeaders.forEach(otherHeader => {
+          if (otherHeader !== header) {
+            otherHeader.classList.remove('active');
+            otherHeader.nextElementSibling.classList.remove('active');
+          }
+        });
+        
+        // Alterna o item clicado
+        this.classList.toggle('active');
+        const content = this.nextElementSibling;
+        content.classList.toggle('active');
+        
+        // Se estiver fechando, remove a classe active após a transição
+        if (!this.classList.contains('active')) {
+          setTimeout(() => {
+            content.classList.remove('active');
+          }, 300);
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
+
+
+<!-- Para accordeons com conteúdo: adicione has-content na classe do botão
+Para accordeons vazios: mantenha apenas accordion-header sem has-content -->
