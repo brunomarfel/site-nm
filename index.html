@@ -157,6 +157,7 @@
         <a href="index.html" class="logo"></a>
         <div class="menu-direita">
             <ul>
+                <li><a href="index.html">HOME</a></li>
                 <li><a href="biografia.html">BIOGRAFIA</a></li>
                 <li><a href="dominios.html">DOMÍNIOS</a></li>
                 <!-- <li><a href="gesangstimmbildung.html" class="active">GESANG & STIMMBILDUNG </a></li> -->
@@ -165,12 +166,12 @@
                 <li><a href="contactos.html">CONTACTOS</a></li>
             </ul>
             <div class="idiomas">
-                <select id="lang-switcher" onchange="mudarIdioma(this.value)">
-                    <option value="index.html" selected>PT</option>
-                    <option value="index.html">EN</option>
-                    <option value="index.html">DE</option>
-                </select>
-            </div>
+    <select id="lang-switcher" onchange="mudarPaginaIdioma(this.value)">
+        <option value="pt" selected>PT</option>
+        <option value="de">DE</option>
+        <!-- <option value="en">EN</option> -->
+    </select>
+</div>
         </div>
     </nav>
 </header>
@@ -188,7 +189,7 @@
         Director artístico · Organista · Musicólogo
         </p> -->
 
-<p style="text-transform: lowercase; font-style: italic; white-space: nowrap;">música sacra. pedagogia musical. musicologia. direcção artística</p>        
+<p style="text-transform: lowercase; font-style: italic; white-space: nowrap;">música sacra · musicologia · direcção artística</p>        
     </div>
 </section>
 
@@ -210,6 +211,76 @@ function nextSlide() {
     slides[current].classList.add('active');
 }
 setInterval(nextSlide, 8000);
+
+function mudarPaginaIdioma(idioma) {
+    const paginaAtual = window.location.pathname.split('/').pop();
+    let novaPagina = '';
+    
+    // Mapeamento das páginas
+    const mapeamento = {
+        'index.html': {
+            'pt': 'index.html',
+            'de': 'index-de.html', 
+            'en': 'index-en.html'
+        },
+        'home.html': {
+            'pt': 'home.html',
+            'de': 'home-de.html',
+            'en': 'home-en.html'
+        },
+        'biografia.html': {
+            'pt': 'biografia.html',
+            'de': 'biografia-de.html',
+            'en': 'biografia-en.html'
+        },
+        'dominios.html': {
+            'pt': 'dominios.html',
+            'de': 'dominios-de.html',
+            'en': 'dominios-en.html'
+        },
+        'actividades.html': {
+            'pt': 'actividades.html',
+            'de': 'actividades-de.html',
+            'en': 'actividades-en.html'
+        },
+        'publicacoes.html': {
+            'pt': 'publicacoes.html',
+            'de': 'publicacoes-de.html',
+            'en': 'publicacoes-en.html'
+        },
+        'contactos.html': {
+            'pt': 'contactos.html',
+            'de': 'contactos-de.html',
+            'en': 'contactos-en.html'
+        }
+    };
+    
+    // Encontra a página correspondente
+    if (mapeamento[paginaAtual] && mapeamento[paginaAtual][idioma]) {
+        novaPagina = mapeamento[paginaAtual][idioma];
+    } else {
+        // Fallback: redireciona para a home do idioma selecionado
+        novaPagina = idioma === 'pt' ? 'index.html' : 
+                    idioma === 'de' ? 'index-de.html' : 'index-en.html';
+    }
+    
+    window.location.href = novaPagina;
+}
+
+// Detecta idioma atual e ajusta o dropdown
+document.addEventListener('DOMContentLoaded', function() {
+    const paginaAtual = window.location.pathname.split('/').pop();
+    const langSwitcher = document.getElementById('lang-switcher');
+    
+    if (paginaAtual.includes('-de.html')) {
+        langSwitcher.value = 'de';
+    } else if (paginaAtual.includes('-en.html')) {
+        langSwitcher.value = 'en';
+    } else {
+        langSwitcher.value = 'pt';
+    }
+});
+
 </script>
 </body>
 </html>
