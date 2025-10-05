@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Nuno Mimoso</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        main {
+            min-height: 100vh;
+            padding: 120px 10% 60px;
+            font-family: 'Playfair Display', serif;
+            background: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .form-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-container h1 {
+            margin-bottom: 20px;
+            color: #002147;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group button {
+            background: #CFAE3D;
+            color: #002147;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .form-group button:hover {
+            background: #b8922f;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            font-weight: bold;
+        }
+
+        .social-links a {
+            color: #002147;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s, transform 0.2s;
+        }
+
+        .social-links a:hover {
+            color: #CFAE3D;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <a href="index-de.html" class="logo"></a>
+            <div class="menu-direita">
+                <ul>
+        <li><a href="index-de.html">HOME</a></li>        
+        <li><a href="biografia-de.html">CURRICULUM VITAE</a></li>    
+        <li><a href="dominios-de.html">LEISTUNGEN</a></li>   
+        <li><a href="actividades-de.html">TÄTIGKEITEN</a></li> 
+        <li><a href="publicacoes-de.html">BEITRÄGE</a></li> 
+        <li><a href="contactos-de.html">KONTAKT</a></li>       
+      </ul>
+                <div class="idiomas">
+                    <select id="lang-switcher" onchange="mudarIdioma(this.value)">
+                        <option value="pt">PT</option>
+                        <option value="de" selected>DE</option>
+                    </select>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="nome">Name</label>
+                    <input type="text" id="nome" name="nome" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-Mail</label>
+                    <input type="email" id="email" name="email" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="assunto">Betreff</label>
+                    <input type="text" id="assunto" name="assunto" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Nachricht</label>
+                    <textarea id="mensagem" name="mensagem" placeholder="" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Senden</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.meloteca.com/portfolio-item/nuno-mimoso/" target="_blank" title="Meloteca">Meloteca</a>
+            <a href="https://www.facebook.com/nuno.mimoso.10" target="_blank" title="Facebook">Facebook</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="links">
+            <a href="#">Datenschutz</a> | 
+            <a href="#">Nutzungsbedingungen</a>
+        </div>
+        <p>&copy; 2025 Nuno Mimoso</p>
+    </footer>
+
+    <script>
+    function mudarIdioma(idioma) {
+        const paginaAtual = window.location.pathname.split('/').pop();
+        let novaPagina = '';
+        
+        const mapeamento = {
+            'contactos.html': {'pt': 'contactos.html', 'de': 'contactos-de.html'},
+            'contactos-de.html': {'pt': 'contactos.html', 'de': 'contactos-de.html'},
+            'index.html': {'pt': 'index.html', 'de': 'index-de.html'},
+            'index-de.html': {'pt': 'index.html', 'de': 'index-de.html'},
+            'biografia.html': {'pt': 'biografia.html', 'de': 'biografia-de.html'},
+            'biografia-de.html': {'pt': 'biografia.html', 'de': 'biografia-de.html'},
+            'dominios.html': {'pt': 'dominios.html', 'de': 'dominios-de.html'},
+            'dominios-de.html': {'pt': 'dominios.html', 'de': 'dominios-de.html'},
+            'actividades.html': {'pt': 'actividades.html', 'de': 'actividades-de.html'},
+            'actividades-de.html': {'pt': 'actividades.html', 'de': 'actividades-de.html'},
+            'publicacoes.html': {'pt': 'publicacoes.html', 'de': 'publicacoes-de.html'},
+            'publicacoes-de.html': {'pt': 'publicacoes.html', 'de': 'publicacoes-de.html'}
+        };
+        
+        if (mapeamento[paginaAtual] && mapeamento[paginaAtual][idioma]) {
+            novaPagina = mapeamento[paginaAtual][idioma];
+        } else {
+            novaPagina = idioma === 'pt' ? 'index.html' : 'index-de.html';
+        }
+        
+        window.location.href = novaPagina;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const paginaAtual = window.location.pathname.split('/').pop();
+        const langSwitcher = document.getElementById('lang-switcher');
+        
+        if (paginaAtual.includes('-de.html')) {
+            langSwitcher.value = 'de';
+        } else {
+            langSwitcher.value = 'pt';
+        }
+    });
+    </script>
+</body>
+</html>

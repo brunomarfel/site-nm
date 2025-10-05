@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Domínios | Nuno Mimoso</title>
 
-<!-- link para o CSS global (certifica-te que style.css está na MESMA PASTA que este HTML) -->
 <link rel="stylesheet" href="style.css">
 <script src="script.js" defer></script>
 
@@ -89,11 +88,11 @@
 
   .accordion-content.active {
     padding: 0 0 20px 0;
-    max-height: 2000px; /* AUMENTADO para caber até 10 parágrafos */
+    max-height: 2000px;
   }
 
   .accordion-content p {
-    margin-bottom: 15px; /* MAIS ESPAÇO entre parágrafos */
+    margin-bottom: 15px;
     text-align: justify;
     color: #333;
     line-height: 1.6;
@@ -108,133 +107,135 @@
     .texto-apresentacao h1 { font-size: 2rem; }
     .texto-apresentacao h2 { font-size: 1.2rem; }
     .accordion-header { padding: 15px 0; font-size: 14px; }
-    .accordion-content.active { padding: 0 0 15px 0; max-height: 3000px; } /* AUMENTADO para mobile */
+    .accordion-content.active { padding: 0 0 15px 0; max-height: 3000px; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAVBAR (idêntica ao index) -->
+<!-- NAVBAR -->
 <header>
   <nav class="menu">
     <a href="index.html" class="logo"></a>
     <div class="menu-direita">
-          <ul>
-                <li><a href="biografia.html">BIOGRAFIA</a></li>
-                <li><a href="dominios.html">DOMÍNIOS</a></li>
-                <!-- <li><a href="gesangstimmbildung.html" class="active">GESANG & STIMMBILDUNG </a></li> -->
-                <li><a href="actividades.html" class="active">ACTIVIDADES</a></li>
-                <li><a href="puplicacoes.html">PUBLICAÇÕES</a></li>
-                <li><a href="contactos.html">CONTACTOS</a></li>
-            </ul>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="biografia.html">BIOGRAFIA</a></li>
+        <li><a href="dominios.html">DOMÍNIOS</a></li>
+        <li><a href="actividades.html">ACTIVIDADES</a></li>
+        <li><a href="publicacoes.html">PUBLICAÇÕES</a></li>
+        <li><a href="contactos.html">CONTACTOS</a></li>
+      </ul>
       <div class="idiomas">
         <select id="lang-switcher" onchange="mudarIdioma(this.value)">
-          <option value="apresentacao.html" selected>PT</option>
-          <option value="apresentacao.html">EN</option>
-          <option value="apresentacao.html">DE</option>
+          <option value="pt" selected>PT</option>
+          <option value="de">DE</option>
         </select>
       </div>
     </div>
   </nav>
 </header>
 
-
 <!-- HERO BANNER -->
 <div class="hero-banner" role="img" aria-label="Foto de apresentação"></div>
 
 <!-- Conteúdo -->
 <main>
-    
-    <div class="texto-apresentacao">
-
+  <div class="texto-apresentacao">
     <h1 style="text-align: left;">DOMÍNIOS</h1>
 
     <h2 style="text-align: left;">Pedagogia Musical. Música Sacra.</h2>
 
     <div class="accordion-item">
-        <button class="accordion-header">Aulas particulares. Formações. Cursos.</button>
-        <div class="accordion-content">
-            <p></p>
-        </div>
+      <button class="accordion-header">Aulas particulares. Formações. Cursos.</button>
+      <div class="accordion-content">
+        <p></p>
+      </div>
     </div>
 
     <div class="accordion-item">
-        <button class="accordion-header">Visitas Musicais. Visitas Guiadas.</button>
-        <div class="accordion-content">
-            <p></p>
-        </div>
+      <button class="accordion-header">Visitas Musicais. Visitas Guiadas.</button>
+      <div class="accordion-content">
+        <p></p>
+      </div>
     </div>
 
     <div class="accordion-item">
-        <button class="accordion-header has-content">Cursos Intensivos de Técnica Vocal. </button>
-        <div class="accordion-content">
-            <h4 style="text-align: left;">GESANG & STIMMBILDUNG – INTENSIVKURSE IN REGENSBURG –</h4>
+      <button class="accordion-header has-content">Cursos Intensivos de Técnica Vocal.</button>
+      <div class="accordion-content">
+        <h4 style="text-align: left;">CANTO & FORMAÇÃO VOCAL – CURSOS INTENSIVOS EM REGENSBURGO –</h4>
         
-        <p class="primeiro-paragrafo">Ihre Stimme entdecken – entfalten – genießen</p>
+        <p class="primeiro-paragrafo">Descobrir – Desenvolver – Desfrutar a sua Voz</p>
 
-        <p class="paragrafos-justificados"><strong>Für wen? ▪</strong> Wenn Sie Ihre Stimme entdecken und entwickeln möchten ▪ Wenn Sie als Laiensänger*in im Chor singen und Ihre Stimme verbessern möchten ▪ Wenn Sie bereits professioneller Sänger sind und sich weiterentwickeln möchten ▪ Wenn Sie durchs Singen Ihrer Seele nähren möchten.</p>
+        <p class="paragrafos-justificados"><strong>Para quem? ▪</strong> Se quer descobrir e desenvolver a sua voz ▪ Se canta como amador em coros e quer melhorar a sua técnica vocal ▪ Se já é cantor profissional e quer evoluir ▪ Se quer alimentar a sua alma através do canto.</p>
 
-        <p class="paragrafos-justificados"><strong>Gesangscoach ▪</strong> Nuno Mimoso aus Porto/Portugal – Kirchenmusiker, Musikwissenschaftler, Sänger und Pädagoge mit 20 Jahren Erfahrung in der Vokalpädagogik, geprägt durch die spanisch-italienische Gesangsschule, tätig in Klassik, Oper (u. a. Coliseu do Porto), Oratorien und Kirchenmusik – bietet qualifizierten Gesangsunterricht und Stimmbildung an.</p>
+        <p class="paragrafos-justificados"><strong>Professor de Canto ▪</strong> Nuno Mimoso do Porto/Portugal – Músico de igreja, musicólogo, cantor e pedagogo com 20 anos de experiência em pedagogia vocal, formado na escola vocal espanhola-italiana, ativo em música clássica, ópera (ex. Coliseu do Porto), oratória e música sacra – oferece aulas qualificadas de canto e formação vocal.</p>
 
-        <p class="paragrafos-justificados"><strong>Intensivkurs I.</strong>  November 2025 | <strong>Intensivkurs II.</strong> Januar 2026 ▪ Ort: Pfarrzentrum Heiliger Geist, Isarstraße 54, 93057 Regensburg ▪ Schwerpunkte: Atemtechnik, Stimmbildung, Vocalizing, Repertoire ▪ Stilrichtungen: Klassik, Kammermusik, Oper, Oratorien, Kirchenmusik, Gospel ▪ Schnupperstunde jederzeit möglich.</p>
+        <p class="paragrafos-justificados"><strong>Curso Intensivo I.</strong> Novembro 2025 | <strong>Curso Intensivo II.</strong> Janeiro 2026 ▪ Local: Centro Paroquial do Espírito Santo, Isarstraße 54, 93057 Regensburg ▪ Focos: Técnica respiratória, formação vocal, vocalizes, repertório ▪ Estilos: Música clássica, música de câmara, ópera, oratória, música sacra, gospel ▪ Aula experimental disponível a qualquer momento.</p>
 
-        <p class="paragrafos-justificados"><strong>Ziele ▪</strong> Entdeckung eigener stimmlicher Fähigkeiten ▪ Entwicklung des bewussten Singens anhand der Technik ▪ Schulung des kritischen Gehörs ▪ Selbstbewusstsein durchs Solo- und Vor-Singen ▪ Vorbereitung auf das Singen in qualitätsvollen Chören ▪ Förderung von Gesundheit und Wohlbefinden durch Gesang...</p>
+        <p class="paragrafos-justificados"><strong>Objectivos ▪</strong> Descoberta das capacidades vocais ▪ Desenvolvimento do canto consciente através da técnica ▪ Treino do ouvido crítico ▪ Confiança através do canto a solo e em audições ▪ Preparação para cantar em coros de qualidade ▪ Promoção da saúde e bem-estar através do canto...</p>
 
-        <p class="paragrafos-justificados"><strong>Kontakt ▪ </strong>Kontaktieren Sie mich für weitere informações oder zur Vereinbarung einer Probestunde.</p>
-        </div>
+        <p class="paragrafos-justificados"><strong>Contacto ▪ </strong>Contacte-me para mais informações ou para marcar uma aula experimental.</p>
+      </div>
     </div>
 
     <h2 style="text-align: left;">Musicologia. Organologia.</h2>
 
     <div class="accordion-item">
-        <button class="accordion-header">IPOP: Inventário do Património Organístico Português. </button>
-        <div class="accordion-content">
-            <p></p>
-        </div>
+      <button class="accordion-header">IPOP: Inventário do Património Organístico Português.</button>
+      <div class="accordion-content">
+        <p></p>
+      </div>
     </div>
 
     <div class="accordion-item">
-        <button class="accordion-header">Projectos de Restauro de Órgãos em Portugal.</button>
-        <div class="accordion-content">
-            <p></p>
-        </div>
+      <button class="accordion-header">Projectos de Restauro de Órgãos em Portugal.</button>
+      <div class="accordion-content">
+        <p></p>
+      </div>
     </div>
 
     <div class="accordion-item">
-        <button class="accordion-header">Património Musical. Edição Crítica Musicográfica.</button>
-        <div class="accordion-content">
-            <p></p>
-        </div>
+      <button class="accordion-header has-content">Património Musical. Edição Crítica Musicográfica.</button>
+      <div class="accordion-content">
+       <p>
+  <a href="https://biblioteca.patrimoniocultural.gov.pt/catalogo/winlibsrch.aspx?pesq=3&doc=32883"
+     target="_blank"
+     rel="noopener noreferrer"
+     style="text-decoration: none; color: #0056b3; font-weight: bold;">
+      Património Musical de Santa Clara do Porto - Nuno Mimoso - 2023
+
+  </a>
+</p>
+
+      </div>
     </div>
-    
     <h2 style="text-align: left;">Direcção Artística.</h2>
 
     <div class="accordion-item">
-        <button class="accordion-header">Conceber, realizar, apresentar Concertos</button>
-        <div class="accordion-content">
-            <p></p>
-        </div>
+      <button class="accordion-header">Conceber, realizar, apresentar Concertos.</button>
+      <div class="accordion-content">
+        <p></p>
+      </div>
     </div>
 
     <div class="accordion-item">
-        <button class="accordion-header">Concertos Pedagógicos. Concertos Comentados.</button>
-        <div class="accordion-content">
-            <p></p>
-        </div>
+      <button class="accordion-header">Concertos Pedagógicos. Concertos Comentados.</button>
+      <div class="accordion-content">
+        <p></p>
+      </div>
     </div>
 
     <div class="accordion-item">
-        <button class="accordion-header">Programas de Inauguração e Divulgação.</button>
-        <div class="accordion-content">
-            <p></p>
-        </div>
+      <button class="accordion-header">Programas de Inauguração e Divulgação.</button>
+      <div class="accordion-content">
+        <p></p>
+      </div>
     </div>
-
-</div>
-
+  </div>
 </main>
 
-<!-- Footer  -->
+<!-- Footer -->
 <footer>
   <div class="links">
     <a href="#">Política de Privacidade</a> |
@@ -243,40 +244,76 @@
   <p>&copy; 2025 Nuno Mimoso</p>
 </footer>
 
+<!-- ===== JAVASCRIPT CORRETO ===== -->
 <script>
-  // Script específico para o accordion
-  document.addEventListener('DOMContentLoaded', function() {
+// FUNÇÃO GLOBAL para troca de idiomas (FORA do DOMContentLoaded)
+function mudarIdioma(idioma) {
+    console.log('Idioma selecionado:', idioma);
+    const paginaAtual = window.location.pathname.split('/').pop();
+    console.log('Página atual:', paginaAtual);
+    
+    const mapeamento = {
+        'dominios.html': {'pt': 'dominios.html', 'de': 'dominios-de.html'},
+        'dominios-de.html': {'pt': 'dominios.html', 'de': 'dominios-de.html'},
+        'index.html': {'pt': 'index.html', 'de': 'index-de.html'},
+        'index-de.html': {'pt': 'index.html', 'de': 'index-de.html'},
+        'biografia.html': {'pt': 'biografia.html', 'de': 'biografia-de.html'},
+        'biografia-de.html': {'pt': 'biografia.html', 'de': 'biografia-de.html'},
+        'actividades.html': {'pt': 'actividades.html', 'de': 'actividades-de.html'},
+        'actividades-de.html': {'pt': 'actividades.html', 'de': 'actividades-de.html'},
+        'publicacoes.html': {'pt': 'publicacoes.html', 'de': 'publicacoes-de.html'},
+        'publicacoes-de.html': {'pt': 'publicacoes.html', 'de': 'publicacoes-de.html'},
+        'contactos.html': {'pt': 'contactos.html', 'de': 'contactos-de.html'},
+        'contactos-de.html': {'pt': 'contactos.html', 'de': 'contactos-de.html'}
+    };
+    
+    if (mapeamento[paginaAtual] && mapeamento[paginaAtual][idioma]) {
+        novaPagina = mapeamento[paginaAtual][idioma];
+    } else {
+        novaPagina = idioma === 'pt' ? 'index.html' : 'index-de.html';
+    }
+    
+    console.log('Redirecionando para:', novaPagina);
+    window.location.href = novaPagina;
+}
+
+// Script do accordion (DENTRO do DOMContentLoaded)
+document.addEventListener('DOMContentLoaded', function() {
+    // Accordion functionality
     const accordionHeaders = document.querySelectorAll('.accordion-header');
     
     accordionHeaders.forEach(header => {
-      header.addEventListener('click', function() {
-        // Fecha todos os outros itens do mesmo grupo (opcional)
-        accordionHeaders.forEach(otherHeader => {
-          if (otherHeader !== header) {
-            otherHeader.classList.remove('active');
-            otherHeader.nextElementSibling.classList.remove('active');
-          }
+        header.addEventListener('click', function() {
+            accordionHeaders.forEach(otherHeader => {
+                if (otherHeader !== header) {
+                    otherHeader.classList.remove('active');
+                    otherHeader.nextElementSibling.classList.remove('active');
+                }
+            });
+            
+            this.classList.toggle('active');
+            const content = this.nextElementSibling;
+            content.classList.toggle('active');
+            
+            if (!this.classList.contains('active')) {
+                setTimeout(() => {
+                    content.classList.remove('active');
+                }, 300);
+            }
         });
-        
-        // Alterna o item clicado
-        this.classList.toggle('active');
-        const content = this.nextElementSibling;
-        content.classList.toggle('active');
-        
-        // Se estiver fechando, remove a classe active após a transição
-        if (!this.classList.contains('active')) {
-          setTimeout(() => {
-            content.classList.remove('active');
-          }, 300);
-        }
-      });
     });
-  });
+
+    // Configura dropdown com idioma atual
+    const paginaAtual = window.location.pathname.split('/').pop();
+    const langSwitcher = document.getElementById('lang-switcher');
+    
+    if (paginaAtual.includes('-de.html')) {
+        langSwitcher.value = 'de';
+    } else {
+        langSwitcher.value = 'pt';
+    }
+});
 </script>
 
 </body>
 </html>
-
-
-<!-- Para accordeons com conteúdo: adicione has-content na classe do botão
-Para accordeons vazios: mantenha apenas accordion-header sem has-content -->

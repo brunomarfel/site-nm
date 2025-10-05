@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Biografia | Nuno Mimoso</title>
 
-<!-- link para o CSS global (certifica-te que style.css está na MESMA PASTA que este HTML) -->
 <link rel="stylesheet" href="style.css">
 <script src="script.js" defer></script>
 
@@ -43,42 +42,38 @@
 </head>
 <body>
 
-<!-- NAVBAR (idêntica ao index) -->
+<!-- NAVBAR -->
 <header>
   <nav class="menu">
     <a href="index.html" class="logo"></a>
     <div class="menu-direita">
       <ul>
-                <li><a href="biografia.html">BIOGRAFIA</a></li>
-                <li><a href="dominios.html">DOMÍNIOS</a></li>
-                <!-- <li><a href="gesangstimmbildung.html" class="active">GESANG & STIMMBILDUNG </a></li> -->
-                <li><a href="actividades.html" class="active">ACTIVIDADES</a></li>
-                <li><a href="puplicacoes.html">PUBLICAÇÕES</a></li>
-                <li><a href="contactos.html">CONTACTOS</a></li>
-            </ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="biografia.html" class="active">BIOGRAFIA</a></li>
+        <li><a href="dominios.html">DOMÍNIOS</a></li>
+        <li><a href="actividades.html">ACTIVIDADES</a></li>
+        <li><a href="publicacoes.html">PUBLICAÇÕES</a></li>
+        <li><a href="contactos.html">CONTACTOS</a></li>
+      </ul>
       <div class="idiomas">
         <select id="lang-switcher" onchange="mudarIdioma(this.value)">
-          <option value="apresentacao.html" selected>PT</option>
-          <option value="apresentacao.html">EN</option>
-          <option value="apresentacao.html">DE</option>
+          <option value="pt" selected>PT</option>
+          <option value="de">DE</option>
         </select>
       </div>
     </div>
   </nav>
 </header>
 
-
 <!-- HERO BANNER -->
 <div class="hero-banner" role="img" aria-label="Foto de apresentação"></div>
 
 <!-- Conteúdo -->
 <main>
-    
-    <div class="texto-apresentacao">
-
+  <div class="texto-apresentacao">
     <h1 style="text-align: left;">BIOGRAFIA</h1>
 
-    <p style="text-align: justify;">músico sacro, organista, barítono lírico, musicólogo, consultor, formador, director artístico. </p>
+    <p style="text-align: justify;">músico sacro, organista, barítono lírico, musicólogo, consultor, formador, director artístico.</p>
 
     <h2 style="text-align: left;">Organista.</h2>
     <p style="text-align: justify;">Diplomado em Órgão - Pedagogia Instrumental pela Escola Superior de Música Sacra e Pedagogia Musical de Ratisbona (Baviera, Alemanha) com a tese <em>A Batalha na Música Ibérica para Órgão no século XVII</em>. Foi bolseiro da Diocese de Ratisbona entre 2011-2016. Discípulo de Franz Josef Stoiber, complementou a formação prática como organista auxiliar na Catedral de S. Pedro de Ratisbona e como assistente na Escola de Música Catedralícia <em>Domspatzen</em>. Cursou interpretação organística especializada em diferentes estilos e tipologias organísticas, junto dos mestres Ludger Lohmann, Jörg-Andreas Bötticher, Bernhard Buttmann, Edgar Krapp. Organista de liturgia e concerto com apresentações na Alemanha, Áustria, Itália, Galiza e Portugal.</p>
@@ -97,14 +92,10 @@
 
     <h2 style="text-align: left;">Director Artístico.</h2>
     <p style="text-align: justify;">Promotor dos Órgãos Históricos de Portugal em ciclos de divulgação, formatos de <em>concerto didáctico</em> e <em>visita musical</em>. Autor das <em>Jornadas do Grande Órgão Histórico da Oliveira</em> (Guimarães) para dinamização cultural daquele Monumento Nacional, a partir do maior órgão histórico do Norte de Portugal (Carvalho 1831-1841). Autor e Director Artístico do Projecto de Inauguração e Dinamização Cultural do Órgão Histórico de Santa Marinha do Zêzere (2023-2024), apoiado pela Direcção-Geral das Artes e pelo Município de Baião. Inaugurou os órgãos históricos restaurados de Santa Clara do Porto e de Santa Marinha do Zêzere.</p>
-
-</div>
-
-
-
+  </div>
 </main>
 
-<!-- Footer (idêntico ao index) -->
+<!-- Footer -->
 <footer>
   <div class="links">
     <a href="#">Política de Privacidade</a> |
@@ -112,6 +103,50 @@
   </div>
   <p>&copy; 2025 Nuno Mimoso</p>
 </footer>
+
+<!-- ===== JAVASCRIPT CORRETO ===== -->
+<script>
+// FUNÇÃO GLOBAL para troca de idiomas
+function mudarIdioma(idioma) {
+    const paginaAtual = window.location.pathname.split('/').pop();
+    let novaPagina = '';
+    
+    const mapeamento = {
+        'biografia.html': {'pt': 'biografia.html', 'de': 'biografia-de.html'},
+        'biografia-de.html': {'pt': 'biografia.html', 'de': 'biografia-de.html'},
+        'index.html': {'pt': 'index.html', 'de': 'index-de.html'},
+        'index-de.html': {'pt': 'index.html', 'de': 'index-de.html'},
+        'dominios.html': {'pt': 'dominios.html', 'de': 'dominios-de.html'},
+        'dominios-de.html': {'pt': 'dominios.html', 'de': 'dominios-de.html'},
+        'actividades.html': {'pt': 'actividades.html', 'de': 'actividades-de.html'},
+        'actividades-de.html': {'pt': 'actividades.html', 'de': 'actividades-de.html'},
+        'publicacoes.html': {'pt': 'publicacoes.html', 'de': 'publicacoes-de.html'},
+        'publicacoes-de.html': {'pt': 'publicacoes.html', 'de': 'publicacoes-de.html'},
+        'contactos.html': {'pt': 'contactos.html', 'de': 'contactos-de.html'},
+        'contactos-de.html': {'pt': 'contactos.html', 'de': 'contactos-de.html'}
+    };
+    
+    if (mapeamento[paginaAtual] && mapeamento[paginaAtual][idioma]) {
+        novaPagina = mapeamento[paginaAtual][idioma];
+    } else {
+        novaPagina = idioma === 'pt' ? 'index.html' : 'index-de.html';
+    }
+    
+    window.location.href = novaPagina;
+}
+
+// Configura dropdown com idioma atual
+document.addEventListener('DOMContentLoaded', function() {
+    const paginaAtual = window.location.pathname.split('/').pop();
+    const langSwitcher = document.getElementById('lang-switcher');
+    
+    if (paginaAtual.includes('-de.html')) {
+        langSwitcher.value = 'de';
+    } else {
+        langSwitcher.value = 'pt';
+    }
+});
+</script>
 
 </body>
 </html>

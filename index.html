@@ -7,147 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* Hero full-screen carousel */
-        .hero {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-        }
-
-        /* Overlay sobre as imagens */
-        .hero::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 1;
-        }
-
-        .hero-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            z-index: 2;
-        }
-
-        .hero-text h1 {
-            font-size: 3rem;
-            font-family: 'Playfair Display', serif;
-            color: #CFAE3D;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-        }
-
-        .hero-text p {
-            font-size: 1.5rem;
-            color: white;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-        }
-
-        .carousel-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-
-        .carousel-slide.active {
-            opacity: 1;
-        }
-
-        /* Navbar sobre o carrossel */
-        header {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            z-index: 3;
-        }
-
-        .menu {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 5%;
-            box-sizing: border-box;
-        }
-
-        .menu .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #CFAE3D;
-            text-decoration: none;
-        }
-
-        .menu-direita {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .menu-direita ul {
-            display: flex;
-            gap: 15px;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .menu-direita ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .menu-direita ul li a:hover,
-        .menu-direita ul li a.active {
-            color: #CFAE3D;
-        }
-
-        /* Dropdown idiomas */
-        .idiomas select {
-            padding: 4px 6px;
-            border: 1px solid #CFAE3D;
-            border-radius: 3px;
-            background: #002147;
-            color: #CFAE3D;
-            font-size: 0.9rem;
-            cursor: pointer;
-        }
-
-        footer {
-            position: relative;
-            background: #002147;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-            z-index: 3;
-        }
-
-        html, body {
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-    </style>
+    
+    <!-- REMOVA TODO ESTE BLOCO <style> -->
 </head>
 <body>
 
@@ -160,18 +21,16 @@
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="biografia.html">BIOGRAFIA</a></li>
                 <li><a href="dominios.html">DOMÍNIOS</a></li>
-                <!-- <li><a href="gesangstimmbildung.html" class="active">GESANG & STIMMBILDUNG </a></li> -->
-                <li><a href="actividades.html" class="active">ACTIVIDADES</a></li>
-                <li><a href="puplicacoes.html">PUBLICAÇÕES</a></li>
+                <li><a href="actividades.html">ACTIVIDADES</a></li>
+                <li><a href="publicacoes.html">PUBLICAÇÕES</a></li>
                 <li><a href="contactos.html">CONTACTOS</a></li>
             </ul>
             <div class="idiomas">
-    <select id="lang-switcher" onchange="mudarPaginaIdioma(this.value)">
-        <option value="pt" selected>PT</option>
-        <option value="de">DE</option>
-        <!-- <option value="en">EN</option> -->
-    </select>
-</div>
+                <select id="lang-switcher" onchange="mudarPaginaIdioma(this.value)">
+                    <option value="pt" selected>PT</option>
+                    <option value="de">DE</option>
+                </select>
+            </div>
         </div>
     </nav>
 </header>
@@ -183,13 +42,10 @@
     <div class="carousel-slide" style="background-image: url('img/slide3.jpg');"></div>
 
     <div class="hero-text">
-<h1 class="titulo-clasico"><big><big>N</big></big>UNO <big><big>M</big></big>IMOSO</h1>
-
-        <!-- <p style="text-transform: lowercase; font-style: italic;">
-        Director artístico · Organista · Musicólogo
-        </p> -->
-
-<p style="text-transform: lowercase; font-style: italic; white-space: nowrap;">música sacra · musicologia · direcção artística</p>        
+        <h1 class="titulo-clasico"><big><big>N</big></big>UNO <big><big>M</big></big>IMOSO</h1>
+        <p style="text-transform: lowercase; font-style: italic; white-space: nowrap;">
+            música sacra · musicologia · direcção artística
+        </p>        
     </div>
 </section>
 
@@ -216,71 +72,40 @@ function mudarPaginaIdioma(idioma) {
     const paginaAtual = window.location.pathname.split('/').pop();
     let novaPagina = '';
     
-    // Mapeamento das páginas
     const mapeamento = {
-        'index.html': {
-            'pt': 'index.html',
-            'de': 'index-de.html', 
-            'en': 'index-en.html'
-        },
-        'home.html': {
-            'pt': 'home.html',
-            'de': 'home-de.html',
-            'en': 'home-en.html'
-        },
-        'biografia.html': {
-            'pt': 'biografia.html',
-            'de': 'biografia-de.html',
-            'en': 'biografia-en.html'
-        },
-        'dominios.html': {
-            'pt': 'dominios.html',
-            'de': 'dominios-de.html',
-            'en': 'dominios-en.html'
-        },
-        'actividades.html': {
-            'pt': 'actividades.html',
-            'de': 'actividades-de.html',
-            'en': 'actividades-en.html'
-        },
-        'publicacoes.html': {
-            'pt': 'publicacoes.html',
-            'de': 'publicacoes-de.html',
-            'en': 'publicacoes-en.html'
-        },
-        'contactos.html': {
-            'pt': 'contactos.html',
-            'de': 'contactos-de.html',
-            'en': 'contactos-en.html'
-        }
+        'index.html': {'pt': 'index.html', 'de': 'index-de.html'},
+        'index-de.html': {'pt': 'index.html', 'de': 'index-de.html'},
+        'biografia.html': {'pt': 'biografia.html', 'de': 'biografia-de.html'},
+        'biografia-de.html': {'pt': 'biografia.html', 'de': 'biografia-de.html'},
+        'dominios.html': {'pt': 'dominios.html', 'de': 'dominios-de.html'},
+        'dominios-de.html': {'pt': 'dominios.html', 'de': 'dominios-de.html'},
+        'actividades.html': {'pt': 'actividades.html', 'de': 'actividades-de.html'},
+        'actividades-de.html': {'pt': 'actividades.html', 'de': 'actividades-de.html'},
+        'publicacoes.html': {'pt': 'publicacoes.html', 'de': 'publicacoes-de.html'},
+        'publicacoes-de.html': {'pt': 'publicacoes.html', 'de': 'publicacoes-de.html'},
+        'contactos.html': {'pt': 'contactos.html', 'de': 'contactos-de.html'},
+        'contactos-de.html': {'pt': 'contactos.html', 'de': 'contactos-de.html'}
     };
     
-    // Encontra a página correspondente
     if (mapeamento[paginaAtual] && mapeamento[paginaAtual][idioma]) {
         novaPagina = mapeamento[paginaAtual][idioma];
     } else {
-        // Fallback: redireciona para a home do idioma selecionado
-        novaPagina = idioma === 'pt' ? 'index.html' : 
-                    idioma === 'de' ? 'index-de.html' : 'index-en.html';
+        novaPagina = idioma === 'pt' ? 'index.html' : 'index-de.html';
     }
     
     window.location.href = novaPagina;
 }
 
-// Detecta idioma atual e ajusta o dropdown
 document.addEventListener('DOMContentLoaded', function() {
     const paginaAtual = window.location.pathname.split('/').pop();
     const langSwitcher = document.getElementById('lang-switcher');
     
     if (paginaAtual.includes('-de.html')) {
         langSwitcher.value = 'de';
-    } else if (paginaAtual.includes('-en.html')) {
-        langSwitcher.value = 'en';
     } else {
         langSwitcher.value = 'pt';
     }
 });
-
 </script>
 </body>
 </html>
